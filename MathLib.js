@@ -253,27 +253,7 @@ class MathLib {
             return Math.min(ccwDiff, cwDiff);
         }
 
-        // make both angles positive and between 0 and 2*PI (2*PI becomes 0)
-        // a1 = ( ( a1 % ( Math.PI*2 ) ) + Math.PI*2 ) % ( Math.PI*2 );
-        // a2 = ( ( a2 % ( Math.PI*2 ) ) + Math.PI*2 ) % ( Math.PI*2 );
-
-        // return Math.min( ( a1 - a2 + Math.PI*2 ) % ( Math.PI * 2 ),
-        //                  ( a2 - a1 + Math.PI*2 ) % ( Math.PI * 2 ) );
-
     }
-
-    // static compareAngles(a1, a2) {
-
-    //     // returns neg. if a1 is a smaller than a2, positive if a1 is greater than a2, and 0 otherwise
-
-    //     // make both angles positive and between 0 and 2*PI (2*PI becomes 0)
-    //     a1 = ( ( a1 % ( Math.PI*2 ) ) + Math.PI*2 ) % ( Math.PI*2 );
-    //     a2 = ( ( a2 % ( Math.PI*2 ) ) + Math.PI*2 ) % ( Math.PI*2 );
-
-    //     return a1-a2;
-
-    // }
-
 
 }
 

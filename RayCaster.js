@@ -107,11 +107,16 @@ class RayCaster {
         let rayDirections = [];
 
         // create a ray at the start and end of our fov
-        let startDir = Vector2.fromHeading(this.heading - this.fov/2);
+        let startDir = Vector2.fromHeading(this.heading - this.fov/2 + 0.0000001);
         startDir.type = "regular";
         rayDirections.push(startDir);
 
-        let endDir = Vector2.fromHeading(this.heading + this.fov/2);
+        let endDir;
+        if (this.fov < Math.PI*2) {
+            endDir = Vector2.fromHeading(this.heading + this.fov/2);
+        } else {
+            endDir = Vector2.fromHeading(this.heading);
+        }
         endDir.type = "regular";
         rayDirections.push(endDir);
 
@@ -264,10 +269,11 @@ class RayCaster {
         let lastCast = this.castRay(rayDirections[0], obstacles);  // cast 1st ray at start of fov
         castVertices.push(lastCast);
 
-        let count = 0;
-        for (let i = 1; i < rayDirections.length; i++) {
+        let count = 0,
+            max = ( this.fov < Math.PI*2 ) ? rayDirections.length : rayDirections.length + 1;
+        for (let i = 1; i < max; i++) {
 
-            let rayDir = rayDirections[i];
+            let rayDir = rayDirections[i % rayDirections.length];
 
             count++;
 
