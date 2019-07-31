@@ -25,7 +25,7 @@ function setup() {
 
     }
 
-    lightSource = new LightSource(new Vector2(width/2, height/2), 200, Math.PI * 7/4, Math.PI/2, 0.25, "rgba(255,0,0,0.5)");
+    lightSource = new LightSource(new Vector2(width/2, height/2), 200, Math.PI * 7/4, Math.PI/2, 0.25, "rgba(0,255,100,0.5)");
 
     //noLoop();
 

@@ -56,7 +56,7 @@ class LightSource {
         }
 
         fill(this.fillColour);
-        endShape(CLOSE);
+        endShape();
 
         let front = Vector2.mult( Vector2.fromHeading( this.raycaster.heading ), 10),
         left  = Vector2.mult( Vector2.fromHeading( this.raycaster.heading + Math.PI * 2/3), 6 ),
