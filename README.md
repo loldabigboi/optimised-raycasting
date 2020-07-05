@@ -1,3 +1,3 @@
 # Optimised raycasting
-
-This is an optimised raycasting algorithm
+An optimised raycasting algorithm programmed using JS.
+Try it out at https://www.jacksonac.me/projects/raycasting/index.html
